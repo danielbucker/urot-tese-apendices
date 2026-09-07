@@ -2,6 +2,10 @@
 data/
 dados/
 
+# Salt de anonimização — nunca versionar (torna a anonimização reversível)
+salt_chave_secreta.txt
+*salt*.txt
+
 # Saídas geradas pelos scripts (checkpoints, modelos, predições, figuras)
 # podem conter informação derivada de pacientes; ficam de fora por padrão.
 outputs/

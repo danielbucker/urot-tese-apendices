@@ -20,6 +20,7 @@ pipeline histórico descontinuado.
 | `uii_and_score.py` | C | Cálculo dos índices inflamatórios urinários (UII1–UII6) e preparação do escore compacto local. |
 | `nested_cv_tese_v2.py` | D | Núcleo do pipeline de validação agrupada, aninhada e temporal (Elastic Net e HistGradientBoosting). |
 | `nested_cv_tree_extension_v3.py` | D (extensão) | Extensão do pipeline de validação para Random Forest, Extra Trees, XGBoost, LightGBM e CatBoost, com as mesmas atribuições de dobras e saídas auditáveis. |
+| `anonimizacao_dados.py` | — (utilitário, fora do índice oficial) | Anonimização criptográfica irreversível (SHA-256 com salt persistente) de `NumeroPedido`, nome do paciente e prontuário, aplicada antes de qualquer etapa analítica. Documenta a metodologia de anonimização usada para gerar os datasets de trabalho. |
 
 `historical_preprocess_cv.py` e `nested_cv_tese_v2.py`/`nested_cv_tree_extension_v3.py`
 foram extraídos/copiados a partir do texto integral em fonte monoespaçada
@@ -86,3 +87,11 @@ Os scripts em `src/` têm convenções de entrada diferentes:
 
   As saídas são gravadas em `outputs/nested_cv_arvores_v3_2026_09_02/`
   (checkpoints, modelos, figuras, predições e relatório técnico).
+
+- **`anonimizacao_dados.py`**: roda de forma interativa (abre uma caixa de
+  diálogo do `tkinter` para escolher a pasta com os dados de origem). Espera
+  um arquivo `Completo_2011_2024.csv` na pasta selecionada e grava
+  `Completo_Anon_2011_2024.csv` anonimizado na mesma pasta. Gera (ou
+  reaproveita) um `salt_chave_secreta.txt` local — **esse arquivo de salt
+  nunca deve ser versionado ou publicado**, pois é o que torna a anonimização
+  irreversível sem ele.
