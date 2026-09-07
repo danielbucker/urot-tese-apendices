@@ -1,0 +1,11 @@
+# Ambiente testado: Python 3.12.14 (conda-forge)
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.0
+scikit-learn==1.9.0
+statsmodels==0.15.0
+matplotlib==3.11.1
+joblib==1.6.0
+lightgbm==4.7.0
+xgboost==3.4.1
+catboost==1.2.10

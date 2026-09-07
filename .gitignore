@@ -1,0 +1,27 @@
+# Dados de paciente — nunca versionar (LGPD / aprovação ética do estudo)
+data/
+dados/
+
+# Saídas geradas pelos scripts (checkpoints, modelos, predições, figuras)
+# podem conter informação derivada de pacientes; ficam de fora por padrão.
+outputs/
+resultados*/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Spyder
+.spyproject/
+.spyderproject
+.spyderworkspace
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# SO
+.DS_Store
+Thumbs.db
